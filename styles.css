@@ -1,4 +1,16 @@
-
 * {
     box-sizing: border-box;
+}
+
+div {
+    border: 1px black solid;
+    background-color: aqua;
+    width: 30px;
+    height: 30px;
+    margin: 15px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 50px;
 }

@@ -1,3 +1,6 @@
+# This exercise is for the WIFI Web Developer course.
+# Work in progress
+
 # TODO:
 
 ## Thema
