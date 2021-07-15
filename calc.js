@@ -19,6 +19,17 @@ function calculate(exprArr) {
         default:
             break;
     }
+
+    if (lastSymbol == '=') {
+        expressionArray = [];
+        expressionArray.push(result);
+    }
+    else {
+        expressionArray = [];
+        expressionArray.push(result);
+        expressionArray.push(lastSymbol);
+    }
+
     return result;
 }
 
@@ -34,16 +45,22 @@ $( document ).ready(function() {
 
         if((val != '+') && (val != '=')) {
             tmpStr += val;
+            console.log(expressionArray);
         } 
         else {
-            expressionArray.push(tmpStr);
-            expressionArray.push(val);
+            if (!tmpStr) {
+                expressionArray.push(val);
+            }
+            else {
+                expressionArray.push(tmpStr);
+                expressionArray.push(val);
+            }
             tmpStr = '';
+            console.log(expressionArray);
         }
         
         console.log(val);
-        $('#result').html(tmpStr);
-        console.log(expressionArray);
+        $('#result').html(expressionArray.join(''));
 
         if(expressionArray.length == 4) {
             let result = calculate(expressionArray);
