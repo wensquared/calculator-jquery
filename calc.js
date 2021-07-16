@@ -53,11 +53,10 @@ function calculate(exprArr) {
 
 
 $( document ).ready(function() {
-    console.log('Page loaded');
+    // console.log('Page loaded');
     let tmpStr = '';
     $('span div').on('click', function() {
         let val = $(this).html();
-        console.log('val: ' + val);
         
         if( val != '+/-') {
             strExpr += val;
@@ -87,14 +86,13 @@ $( document ).ready(function() {
             (val != '/') &&
             (val != 'C') &&
             (val != '%') &&
-            // (val != '+/-') &&
             (val != 'b<sup>n</sup>') &&
             (val != '=')) {
                 tmpStr += val;
-                // strExpr += val;
-                // console.log(expressionArray);
+               
                 $('#result').html(strExpr);
         }
+        
         else if( val == 'C') {
             tmpStr = '';
             expressionArray = [];
@@ -126,6 +124,7 @@ $( document ).ready(function() {
             $('#result').html(strExpr);
         }
 
+        //check for valid math expression
         if(expressionArray.length == 4) {
             let regex = /^[\-]?\d+(\.\d+)?[\+\-\*\/\%]{1}|b\<sup\>n\<\/sup\>[\+\-]?\d+(\.\d+)?[\+\-\*\/\=]{1}$/;
             let divideZero = /^[\-]?\d+(\.\d+)?\/{1}[\+\-]?0\=$/;
@@ -139,7 +138,6 @@ $( document ).ready(function() {
                 strExpr = '';
             }
             else if(divideZero.test(expressionArray.join(''))) {
-                console.log('errrrr');
                 $('#math_expr').html(expressionArray.join(''));
                 $('#result').html('To Infinity and beyond......');
                 expressionArray = [];
@@ -148,19 +146,16 @@ $( document ).ready(function() {
             }
             else {
                 let result = calculate(expressionArray);
-    
                 $('#result').html(result);
                 strExpr = '';
-                console.log(result);
             }
             
         }
         if(expressionArray.length > 4) {
-            console.log('too long');
+            $('#result').html('no valid math expression');
             expressionArray = [];
             strExpr = '';
             $('#result').html(strExpr);
         }
-
     })
 })
