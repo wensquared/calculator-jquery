@@ -27,17 +27,16 @@ main {
     display: grid;
     grid-template-columns: repeat(4,1fr);
     grid-template-areas: 
-        'del delAll mult div'
+        'delAll plusmin mult div'
         'seven eight nine plus'
         'four five six minus'
         'one two three dot'
-        'zero zero enter enter';
+        'perc zero sqr enter';
 }
 
 #one {
     grid-area: one;
 }
-
 #two {
     grid-area: two;
 }
@@ -80,11 +79,17 @@ main {
 #div {
     grid-area: div;
 }
+#perc {
+    grid-area: perc;
+}
+#plusmin {
+    grid-area: plusmin;
+}
+#sqr {
+    grid-area: sqr;
+}
 #enter {
     grid-area: enter;
-}
-#oneDel {
-    grid-area: del;
 }
 #allDel {
     grid-area: delAll;

@@ -15,7 +15,12 @@ function calculate(exprArr) {
         case '+':
             result = firstNum + secondNum;
             break;
-        
+        case '-':
+            result = firstNum - secondNum;
+            break;
+        case '*':
+            result = firstNum * secondNum;
+            break;
         case '/':
             result = firstNum / secondNum;
             break;
@@ -45,12 +50,19 @@ $( document ).ready(function() {
         
         let val = $(this).html();
         strExpr += val;
-        if((val != '+') && 
-            (val != '=') &&
-            (val != '/')
-            ) {
-            tmpStr += val;
-            console.log(expressionArray);
+        if( (val != '+') && 
+            (val != '-') &&
+            (val != '*') &&
+            (val != '/') &&
+            (val != 'C') &&
+            (val != '=')) {
+                tmpStr += val;
+                console.log(expressionArray);
+        }
+        else if( val == 'C') {
+            tmpStr = '';
+            expressionArray = [];
+            strExpr = '';
         } 
         else {
             // continuous calculation (calculating by adding next math operation symbol to previous result)
@@ -75,6 +87,7 @@ $( document ).ready(function() {
         }
         
         console.log(val);
+        
         $('#result').html(strExpr);
 
         if(expressionArray.length == 4) {
@@ -94,6 +107,7 @@ $( document ).ready(function() {
             }
             else {
                 let result = calculate(expressionArray);
+                $('#math_expr').html(strExpr);
                 $('#result').html(result);
                 strExpr = '';
                 console.log(result);
