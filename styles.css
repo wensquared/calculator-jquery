@@ -9,14 +9,15 @@ h1 {
 main {
     display: grid;
     grid-template-columns: repeat(1,1fr);
-    width: 60px;
+    width: 250px;
 }
 
 #math_expr, 
 #result {
     border: 1px black solid;
-    background-color: aqua;
+    background-color: rgb(111, 199, 199);
     height: 30px;
+    width: 250px;
 }
 
 #math_expr {
@@ -96,10 +97,11 @@ main {
 }
 
 span div {
-    border: 1px black solid;
-    background-color: aqua;
-    width: 30px;
-    height: 30px;
+    /* border: 1px black solid; */
+    font-size: 25px;
+    background-color: rgb(179, 197, 197);
+    width: 40px;
+    height: 40px;
     margin: 10px;
     text-align: center;
 }
