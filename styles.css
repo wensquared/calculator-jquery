@@ -2,15 +2,100 @@
     box-sizing: border-box;
 }
 
-div {
+h1 {
+    font-size: 50px;
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    width: 60px;
+}
+
+#math_expr, 
+#result {
+    border: 1px black solid;
+    background-color: aqua;
+    height: 30px;
+}
+
+#math_expr {
+    border-bottom: none;
+}
+
+#btns {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-areas: 
+        'del delAll mult div'
+        'seven eight nine plus'
+        'four five six minus'
+        'one two three dot'
+        'zero zero enter enter';
+}
+
+#one {
+    grid-area: one;
+}
+
+#two {
+    grid-area: two;
+}
+#three {
+    grid-area: three;
+}
+#four {
+    grid-area: four;
+}
+#five {
+    grid-area: five;
+}
+#six {
+    grid-area: six;
+}
+#seven {
+    grid-area: seven;
+}
+#eight {
+    grid-area: eight;
+}
+#nine {
+    grid-area: nine;
+}
+#zero {
+    grid-area: zero;
+}
+#dot {
+    grid-area: dot;
+}
+#plus {
+    grid-area: plus;
+}
+#minus {
+    grid-area: minus;
+}
+#mult {
+    grid-area: mult;
+}
+#div {
+    grid-area: div;
+}
+#enter {
+    grid-area: enter;
+}
+#oneDel {
+    grid-area: del;
+}
+#allDel {
+    grid-area: delAll;
+}
+
+span div {
     border: 1px black solid;
     background-color: aqua;
     width: 30px;
     height: 30px;
-    margin: 15px;
+    margin: 10px;
     text-align: center;
 }
 
-h1 {
-    font-size: 50px;
-}
