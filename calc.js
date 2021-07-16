@@ -34,6 +34,9 @@ function calculate(exprArr) {
         default:
             break;
     }
+
+    $('#math_expr').html(expressionArray.join('')+lastSymbol);
+
     //preparing for continuous calculation
     if (lastSymbol == '=') {
         expressionArray = [];
@@ -44,7 +47,7 @@ function calculate(exprArr) {
         expressionArray.push(result);
         expressionArray.push(lastSymbol);
     }
-
+    
     return result;
 }
 
@@ -54,26 +57,53 @@ $( document ).ready(function() {
     let tmpStr = '';
     $('span div').on('click', function() {
         let val = $(this).html();
-        console.log(val);
-        strExpr += val;
-        if( (val != '+') && 
+        console.log('val: ' + val);
+        
+        if( val != '+/-') {
+            strExpr += val;
+        }
+
+        if( val == '+/-') {
+            let toNum = parseFloat(tmpStr);
+            if (toNum < 0) {
+                toNum = Math.abs(toNum);
+                tmpStr = '+' + tmpStr;
+                
+                
+            }
+            else {
+                toNum = Math.abs(toNum) * -1;
+                tmpStr = '-' + tmpStr;
+            }
+            tmpStr = toNum.toString();
+            expressionArray.push(tmpStr);
+            tmpStr = '';
+            $('#result').html(expressionArray.join(''));
+            
+        }
+        else if( (val != '+') && 
             (val != '-') &&
             (val != '*') &&
             (val != '/') &&
             (val != 'C') &&
             (val != '%') &&
-            (val != '+/-') &&
+            // (val != '+/-') &&
             (val != 'b<sup>n</sup>') &&
             (val != '=')) {
                 tmpStr += val;
-                console.log(expressionArray);
+                // strExpr += val;
+                // console.log(expressionArray);
+                $('#result').html(strExpr);
         }
         else if( val == 'C') {
             tmpStr = '';
             expressionArray = [];
             strExpr = '';
-            $('#math_expr').html(strExpr);
+            $('#math_expr').html('');
+            $('#result').html('');
+            
         } 
+        
         else {
             // continuous calculation (calculating by adding next math operation symbol to previous result)
             if (!tmpStr && expressionArray[0]) {
@@ -93,12 +123,8 @@ $( document ).ready(function() {
                 expressionArray.push(val);
             }
             tmpStr = '';
-            console.log(expressionArray);
+            $('#result').html(strExpr);
         }
-        
-        console.log(val);
-        
-        $('#result').html(strExpr);
 
         if(expressionArray.length == 4) {
             let regex = /^[\-]?\d+(\.\d+)?[\+\-\*\/\%]{1}|b\<sup\>n\<\/sup\>[\+\-]?\d+(\.\d+)?[\+\-\*\/\=]{1}$/;
@@ -106,11 +132,11 @@ $( document ).ready(function() {
             
             if(!regex.test(expressionArray.join(''))){
                 console.log('no valid math expression');
+                
                 $('#math_expr').html(expressionArray.join(''));
                 $('#result').html('no valid math expression');
                 expressionArray = [];
                 strExpr = '';
-                // $('#result').html(strExpr);
             }
             else if(divideZero.test(expressionArray.join(''))) {
                 console.log('errrrr');
@@ -118,17 +144,16 @@ $( document ).ready(function() {
                 $('#result').html('To Infinity and beyond......');
                 expressionArray = [];
                 strExpr = '';
-                // $('#result').html(strExpr);
+
             }
             else {
                 let result = calculate(expressionArray);
-                $('#math_expr').html(strExpr);
+    
                 $('#result').html(result);
                 strExpr = '';
                 console.log(result);
             }
             
-            //console.log(result);
         }
         if(expressionArray.length > 4) {
             console.log('too long');
