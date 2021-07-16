@@ -1,14 +1,13 @@
 # This exercise is for the WIFI Web Developer course.
-# Work in progress
 
-# TODO:
+## TODO:
 
-## Thema
+### Thema
 
 - Javascript - Grundlagen (Variablen, Funktionen, Konditionen, Event Listener, ...)
 - Zusammenspiel JS, HTML und CSS
 
-## Aufgabe
+### Aufgabe
 
 Erstellen Sie die Webapplikation "Taschenrechner"
 Der Taschenrechner soll eine Display haben und zumindest die Eingaben 0-9,+,-,*,/,=,C unterstützen.
@@ -17,11 +16,11 @@ Die Eingabelogik soll der sequentielle Eingabe  (sofortige Ausführung der Opera
 
 Bitte vergessen Sie nicht, dass gewisse Mathematische Operationen, wie z.B. Division durch 0 einen Fehler ausgeben.
 
-## Zusatzaufgabe
+### Zusatzaufgabe
 
 Der Taschenrechner soll weitere Funktionen wie z.B. SQRT, Komma, +/-, %, 00, etc. unterstützen.
 
-## Hinweise
+### Hinweise
 
 - Sie können auch jQuery verwenden.
 - Denken Sie z.B. an die Möglichkeit "data-" HTML Attribute zu verwenden.
