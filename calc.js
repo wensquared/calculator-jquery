@@ -55,9 +55,11 @@ function calculate(exprArr) {
 $( document ).ready(function() {
     // console.log('Page loaded');
     let tmpStr = '';
+
     $('span div').on('click', function() {
-        let val = $(this).html();
         
+        let val = $(this).html();
+
         if( val != '+/-') {
             strExpr += val;
         }
@@ -67,8 +69,6 @@ $( document ).ready(function() {
             if (toNum < 0) {
                 toNum = Math.abs(toNum);
                 tmpStr = '+' + tmpStr;
-                
-                
             }
             else {
                 toNum = Math.abs(toNum) * -1;
@@ -92,16 +92,13 @@ $( document ).ready(function() {
                
                 $('#result').html(strExpr);
         }
-        
         else if( val == 'C') {
             tmpStr = '';
             expressionArray = [];
             strExpr = '';
             $('#math_expr').html('');
             $('#result').html('');
-            
         } 
-        
         else {
             // continuous calculation (calculating by adding next math operation symbol to previous result)
             if (!tmpStr && expressionArray[0]) {
@@ -142,15 +139,14 @@ $( document ).ready(function() {
                 $('#result').html('To Infinity and beyond......');
                 expressionArray = [];
                 strExpr = '';
-
             }
             else {
                 let result = calculate(expressionArray);
                 $('#result').html(result);
                 strExpr = '';
             }
-            
         }
+        
         if(expressionArray.length > 4) {
             $('#result').html('no valid math expression');
             expressionArray = [];
