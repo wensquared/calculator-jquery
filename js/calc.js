@@ -72,6 +72,7 @@ $(document).ready(function() {
                 tmpStr += val;
                 strExpr = $(this).html();
                 $('#result').html(strExpr);
+                $('#math_expr').html('');
             }
             else {
                 tmpStr += val;
