@@ -1,13 +1,5 @@
 # This exercise is for the WIFI Web Developer course.
 
-## TODO:
-Zu den Zusatzaufgaben:
-
-% !== "modulo"
-Du willst beispielsweise ausrechnen wie viel 40% von 170 sind. Dann tippe in den Taschenrechner: 170 * 40 % ...
-
-+/-
-Wenn ich 8 und dann +/- drücke steht -8. Drücke ich dann nochmals +/-, dann habe ich -8NaN ...
 ### Thema
 
 - Javascript - Grundlagen (Variablen, Funktionen, Konditionen, Event Listener, ...)
