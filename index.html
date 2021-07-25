@@ -4,37 +4,43 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Calculator jQuery</title>
-        <link rel="stylesheet" href="./styles.css">
+        
+        <link rel="stylesheet" href="./jqueryUi/jquery-ui.min.css">
+        <link rel="stylesheet" href="./jqueryUi/jquery-ui.structure.min.css">
+        <link rel="stylesheet" href="./jqueryUi/jquery-ui.theme.min.css">
+        <link rel="stylesheet" href="./css/styles.css">
         <script src="./js/jquery-3.6.0.min.js"></script>
-        <script src="./calc.js"></script>
+        <script src="./jqueryUi/jquery-ui.min.js"></script>
+        <script src="./js/calc.js"></script>
+        
     </head>
     <body>
-        <main>        
+        <main>            
             <h1>Calculator</h1>    
             <div id="math_expr"></div>
-            <div id="result"></div>
+            <div id="result">0</div>
             <span id="btns">
-                <div id="one">1</div>
-                <div id="two">2</div>
-                <div id="three">3</div>
-                <div id="four">4</div>
-                <div id="five">5</div>
-                <div id="six">6</div>
-                <div id="seven">7</div>
-                <div id="eight">8</div>
-                <div id="nine">9</div>
-                <div id="zero">0</div>
-                <div id="dot">.</div>
-                <div id="plus">+</div>
-                <div id="plusmin">+/-</div>
-                <div id="minus">-</div>
-                <div id="mult">*</div>
-                <div id="div">/</div>
-                <div id="perc">%</div>
-                <div id="sqr">b<sup>n</sup></div>
-                <div id="enter">=</div>
-                <div id="allDel">C</div>
-            </span>
+                <div id="one" data-value="1">1</div>
+                <div id="two" data-value="2">2</div>
+                <div id="three" data-value="3">3</div>
+                <div id="four" data-value="4">4</div>
+                <div id="five" data-value="5">5</div>
+                <div id="six" data-value="6">6</div>
+                <div id="seven" data-value="7">7</div>
+                <div id="eight" data-value="8">8</div>
+                <div id="nine" data-value="9">9</div>
+                <div id="zero" data-value="zero">0</div>
+                <div id="dot" data-value=".">.</div>
+                <div class="calculate" id="plus" data-operation="addition">+</div>
+                <div id="plusmin" data-operation="addSub">+/-</div>
+                <div id="minus" data-operation="substraction">-</div>
+                <div id="mult" data-operation="multiplication">*</div>
+                <div id="div" data-operation="division">/</div>
+                <div id="perc" data-operation="percentage"> % of </div>
+                <div id="sqr" data-operation="exponent"> b<sup>n</sup> </div>
+                <div class="calculate" id="enter" data-operation="endResult">=</div>
+                <div id="allDel" data-operation="delete">C</div>
+            </span>      
         </main>
         <div id="side">
             <p>Notes: </p>
@@ -45,5 +51,6 @@
                 <li>NO division through Zero allowed ;)</li>
             </ul>
         </div>
+        <div id="dlg1" title="Error"></div>
     </body>
 </html>

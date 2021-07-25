@@ -114,6 +114,7 @@ span {
 }
 #perc {
     grid-area: perc;
+    font-size: 19px;
 }
 #plusmin {
     grid-area: plusmin;
