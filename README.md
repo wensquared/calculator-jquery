@@ -14,11 +14,12 @@ Der Taschenrechner soll eine Display haben und zumindest die Eingaben 0-9,+,-,*,
 
 Die Eingabelogik soll der sequentielle Eingabe  (sofortige Ausführung der Operationen) entsprechen, d.h. die Operationen werden direkt in der Reihenfolge ausgewertet, in der sie eingegeben werden.
 
+
+Bitte vergessen Sie nicht, dass gewisse Mathematische Operationen, wie z.B. Division durch 0 einen Fehler ausgeben.
+
 NEU:
 Erweitern Sie die Webapplikation "Taschenrechner" um einen jQueryUI Dialog (analog zu "alert") für die Fehlerausgabe.
 Gewisse mathematische Operationen, wie z.B. Division durch 0, sollen auf diese Art & Weise einen Fehler ausgeben.
-
-Bitte vergessen Sie nicht, dass gewisse Mathematische Operationen, wie z.B. Division durch 0 einen Fehler ausgeben.
 
 ### Zusatzaufgabe
 
